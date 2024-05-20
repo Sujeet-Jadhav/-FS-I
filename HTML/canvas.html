@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas</title>
+</head>
+
+<body>
+    <canvas id="canvas" width="300" height="200" style="border:1px solid black;"></canvas>
+    <canvas id="myCanvas" width="200" height="100" style="border:1px solid #d3d3d3;">
+        Your browser does not support the HTML canvas tag.</canvas> <br>
+    <canvas id="Canvas" width="200" height="100" style="border:1px solid #d3d3d3;">
+        Your browser does not support the HTML canvas tag.</canvas>
+    <canvas id="Gradient" width="200" height="100" style="border:1px solid #d3d3d3;">
+        Your browser does not support the HTML canvas tag.</canvas>
+        <img id="prime" src="prime.webp" width="300" height="200">
+    <canvas id="Image" width="1000" height="700" style="border:1px solid grey;"></canvas>
+
+    <script>
+        window.onload = function () {
+            const canvas = document.getElementById("Image");
+            const ctx = canvas.getContext("2d");
+            const img = document.getElementById("prime");
+            ctx.drawImage(img, 10, 10);
+        };
+    </script>
+
+    <script>
+        var c = document.getElementById("Gradient");
+        var ctx = c.getContext("2d");
+        // Create gradient
+        var grd = ctx.createLinearGradient(0, 0, 200, 0);
+        grd.addColorStop(0, "red");
+        grd.addColorStop(1, "white");
+        // Fill with gradient
+        ctx.fillStyle = grd;
+        ctx.fillRect(10, 10, 150, 80);
+    </script>
+
+    <script>
+        var c = document.getElementById("myCanvas");
+        var ctx = c.getContext("2d");
+        ctx.font = "30px Arial";
+        ctx.fillText("Hello World", 20, 60);
+    </script>
+
+    <script>
+        var c = document.getElementById("Canvas");
+        var ctx = c.getContext("2d");
+        ctx.beginPath();
+        ctx.arc(95, 50, 40, 0, 2 * Math.PI);
+        ctx.stroke();
+        ctx.beginPath();
+        ctx.rect(20, 20, 150, 100);
+        ctx.stroke();
+    </script>
+
+    <script>
+        var c = document.getElementById("canvas");
+        var ctx = c.getContext("2d");
+        ctx.moveTo(1, 0);
+        ctx.lineTo(1000, 1000);
+        ctx.stroke();
+    </script>
+</body>
+
+</html>

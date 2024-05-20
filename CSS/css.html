@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS</title>
+    <!-- links -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&family=Single+Day&display=swap"
+        rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Marathi:ital@1&display=swap" rel="stylesheet">
+    <!-- external -->
+    <link rel="stylesheet" href="style.css">
+    <!-- internal -->
+    <style>
+        * {
+            /* font-family: 'Single Day', serif; */
+            font-size: large;
+        }
+
+        .hide {
+            display: none;
+        }
+
+        /* element */
+        p {
+            color: blueviolet;
+        }
+
+        /* id */
+        #para1 {
+            text-align: center;
+            color: yellowgreen;
+        }
+
+        /* class */
+        .center {
+            text-align: center;
+            color: red;
+        }
+
+        .box {
+            background-color: yellow;
+            padding: 10px;
+            margin: 10px;
+        }
+
+        #id1 {
+            border: 2px solid red;
+            font-family: 'Times New Roman', Times, serif;
+            padding: 5px;
+        }
+
+        #id2 {
+            border: 2px dotted black;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            padding: 7px;
+            background-color: rgb(30, 255, 0);
+        }
+
+        #id3 {
+            border: 2px dashed blue;
+            padding: 2px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        #id4 {
+            border: 5px double red;
+            padding: 5px;
+            font-family: 'Merriweather';
+            background-color: rgb(212, 0, 255);
+        }
+
+        #id5 {
+            font-family: 'Tiro Devanagari Marathi', serif;
+        }
+
+        .container {
+            text-align: center;
+            align-items: center;
+            border: 2px solid black;
+            margin: auto;
+            padding: 15px;
+            width: 700px;
+        }
+
+        button1 {
+            background-color: rgb(86, 205, 50);
+            border-radius: 10px;
+            font-family: 'Courier New', Courier, monospace;
+            cursor: pointer;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        button1:hover {
+            background-color: lawngreen;
+        }
+
+        button1:active {
+            background-color: aliceblue;
+        }
+
+        a:visited {
+            background-color: rgb(226, 43, 43);
+            color: red;
+        }
+    </style>
+
+    <style>
+        .boxes {
+            background-color: white;
+            width: 600px;
+            height: 300px;
+        }
+
+        .class {
+            border: 2px solid black;
+            height: 100px;
+            width: 100px;
+            margin: 10px;
+            padding: 10px;
+            display: inline-block;
+            background-color: yellow;
+        }
+
+        #box1 {
+            position: sticky;
+            /*change position from current position on parent element*/
+            top: 0;
+        }
+
+        #box2 {
+            position: fixed;
+            /*position remain in current position on document*/
+            top: 200px;
+            left: 200px;
+        }
+
+        #box3 {
+            position: relative;
+            /*change position from current position*/
+            top: 200px;
+            left: 200px;
+        }
+
+        #box4 {
+            position: absolute;
+            /*change position from document position*/
+            top: 200px;
+            left: 200px;
+        }
+    </style>
+
+    <style>
+        .container1 {
+            display: inline-block;
+            width: 400px;
+            border: 2px solid black;
+            margin-top: 50px;
+        }
+
+        #first {
+            font-size: 2em;
+            /* the size are inherited from parent element */
+        }
+
+        #second {
+            width: 10vw;
+            height: 10vh;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: black;
+            width: 100%;
+            height: 30px;
+            z-index: 1;
+        }
+
+        .navbar li {
+            text-decoration: none;
+            display: inline;
+            padding: 0 10px 0 10px;
+        }
+
+        .navbar a {
+            font-size: small;
+        }
+
+        .navbar ul {
+            margin-top: 2px;
+            margin-left: 50px;
+            overflow: auto;
+        }
+
+        .main {
+            margin-left: 100px;
+            position: absolute;
+            width: 50%;
+        }
+
+        .sidebar {
+            margin-top: 30px;
+            background-color: black;
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 90px;
+        }
+
+        .sidebar li {
+            text-decoration: none;
+            padding: 10px 0px 10px 0px;
+        }
+
+        .sidebar ul {
+            margin-top: 2px;
+            padding-left: 10px;
+            /* overflow: auto; */
+        }
+
+        .info {
+            display: inline-block;
+            position: absolute;
+            margin: 10px;
+            margin-top: 50px;
+            border: 2px solid black;
+            width: 300px;
+        }
+    </style>
+
+    <style>
+        /*Animation*/
+        .box2 {
+            position: relative;
+            animation: moves 5s linear 1s infinite alternate;
+
+        }
+
+        @keyframes moves {
+            /* from {
+                width: 0%;
+            }
+
+            to {
+                width: 100%;
+            } */
+
+            0% {
+                background-color: red;
+                left: 0px;
+                top: 0px;
+            }
+
+            25% {
+                background-color: yellow;
+                left: 200px;
+                top: 0px;
+            }
+
+            50% {
+                background-color: blue;
+                left: 200px;
+                top: 200px;
+            }
+
+            75% {
+                background-color: green;
+                left: 0px;
+                top: 200px;
+            }
+
+            100% {
+                background-color: red;
+                left: 0px;
+                top: 0px;
+            }
+        }
+
+        /* Flex Box */
+        .box1 {
+            margin: auto;
+            transition-duration: 3s;
+        }
+
+        .box1:hover {
+            border-radius: 50%;
+            background-image: radial-gradient(green, yellow, red);
+            transform: rotate(36000deg);
+        }
+
+        .container {
+            width: 100%;
+            height: 90vh;
+            display: flex;
+            align-content: center;
+        }
+
+        .spin {
+            display: flex;
+            align-content: center;
+            width: 100px;
+            height: 100px;
+            border: 2px solid black;
+            border-radius: 50%;
+        }
+
+        .spin:hover {
+            transition-duration: 3s;
+            background-color: orange;
+            /* transform: scale(350%); */
+            width: 1000px;
+            height: 700px;
+
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="hide">
+
+        <p>This is Css styling</p>
+        <p id="para1">Hello World!</p>
+        <h2 class="center">Red and center-aligned heading</h2>
+        <!-- inline -->
+        <p style="color:gray;">This is a paragraph.</p>
+
+        <div class="box1">Radial</div>
+        <div class="box2">Linear</div>
+
+        <div class="div1"></div>
+        <div class="div2"></div>
+
+        <div class="flex-container">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+        </div>
+
+        <ul>
+            <li>Java Full Stack Development</li>
+            <ul>
+                <li>Core Java</li>
+                <ol type="i">
+                    <li>Basics</li>
+                    <li>Loops</li>
+                    <li>Arrays</li>
+                </ol>
+                <li>DBMS</li>
+                <ol type="i">
+                    <li>SQL</li>
+                    <li>JDBC</li>
+                </ol>
+            </ul>
+        </ul>
+        <ul>
+            <li>Soft Skills</li>
+            <ol type="i">
+                <li>Interview Preparation</li>
+                <li>CV prop</li>
+            </ol>
+        </ul>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Roll No</th>
+                    <th>Name</th>
+                    <th>Course</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Om</td>
+                    <td>MSc</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Raj</td>
+                    <td>Java</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Sham</td>
+                    <td>SQL</td>
+                </tr>
+            </tbody>
+        </table>
+        &copy; &lt; &gt; &#8592; &#x2612; &#9824; &#9827; &#9829; &#9830;
+        <div id="id1" class="box">Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, eaque?</div>
+        <div id="id2" class="box">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta illo ut maxime!</div>
+        <div id="id3" class="box">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem quae in modi
+            architecto,
+            aspernatur beatae.</div>
+        <div id="id4" class="box">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem reprehenderit enim
+            rerum
+            voluptas corporis beatae fugit distinctio alias laboriosam inventore.</div>
+        <div id="id5">चूंकि मानव अधिकारों के प्रति उपेक्षा और घृणा के फलस्वरूप ही ऐसे बर्बर कार्य हुए जिनसे मनुष्य</div>
+
+        <div class="container">
+            <h3>This is my webpage</h3>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Earum quis similique in commodi neque? Magni
+                minima
+                voluptas quas et sint.</p>
+            <button class="button1"><a target="_blank" href="http://google.com">Click</a></button>
+        </div>
+
+
+        <div class="boxes">
+            <!-- position - static and relative -->
+            <div id="box1" class="class">I</div>
+            <div id="box2" class="class">II</div>
+            <div id="box3" class="class">III</div>
+            <div id="box4" class="class">IV</div>
+        </div>
+
+        <div>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita pariatur quis laboriosam dolorem? Cumque
+            soluta voluptatibus consectetur ab, doloribus tempore dolore, placeat dolor hic incidunt pariatur neque
+            consequuntur laudantium optio. Quo atque, nihil commodi cumque totam vero ab, vel magnam pariatur vitae
+            minus
+            sunt ipsa iure facilis, nobis accusantium unde recusandae? Minus, voluptatibus voluptates blanditiis,
+            debitis
+            pariatur accusantium soluta quae quaerat iure, eum iste aperiam praesentium. Corrupti vel aspernatur quia
+            saepe
+            nemo eum odio, ut, sequi, doloremque laboriosam omnis labore recusandae velit. Cumque perferendis voluptate
+            expedita eos, nobis libero rem molestiae, totam beatae aliquam delectus deserunt repudiandae amet! Aliquid
+            ratione dolorem eos beatae. Numquam fugit nemo voluptate vero alias quis ipsa laboriosam eius ullam iste
+            reiciendis consequatur corrupti voluptates odit quia tempora quo et, sint ducimus aut in eveniet. Fugit,
+            soluta
+            necessitatibus? Ab aliquam quidem impedit ratione minima, fuga ex ipsam officiis commodi saepe. Consequuntur
+            officia, cumque aliquid in dolorem adipisci pariatur est optio enim deleniti ipsa alias odit, earum velit
+            commodi, veritatis error repudiandae exercitationem ipsam quibusdam. Provident iure beatae at doloremque
+            earum
+            repellendus nisi nemo quo nostrum eos, culpa nihil itaque veritatis quis iste magnam voluptatibus impedit
+            assumenda commodi cumque rem possimus. Ipsum explicabo perferendis maxime eaque mollitia itaque dolorem eos
+            laboriosam nostrum! Facere excepturi officiis, voluptate numquam eveniet assumenda sint tenetur maxime porro
+            necessitatibus quis quo, id odit sit dolores asperiores! Repellendus incidunt et, iure magnam distinctio
+            dignissimos iste beatae facere sint. Voluptatibus reiciendis, placeat omnis minima eligendi ipsum, cumque
+            illum
+            doloribus consequuntur ratione eveniet? Quis velit a numquam accusantium itaque atque at nisi officia iure,
+            reprehenderit magni, cum eos. Adipisci, similique facilis nihil doloribus consequatur aperiam sunt
+            accusantium,
+            modi error distinctio obcaecati. Quaerat ea repellendus, amet repellat, perspiciatis officia expedita
+            nostrum
+            iste, nesciunt similique voluptatibus corporis quas eum. Odio, rem provident ex architecto consequatur cum
+            molestiae, perspiciatis sed fugit consequuntur vero praesentium error maxime nesciunt nam mollitia facilis
+            reprehenderit temporibus voluptate eum earum voluptatum ut. Minima ullam cum officiis maiores, deserunt
+            repellat, enim, numquam dolore excepturi accusantium cupiditate alias recusandae ratione esse earum ex non
+            possimus pariatur temporibus quos! Eius explicabo modi vero! Voluptate quaerat quae quod explicabo libero
+            amet
+            ex dignissimos similique dicta unde aperiam placeat repellat consectetur quibusdam soluta tenetur
+            exercitationem
+            sapiente, inventore vitae provident omnis, ipsum ipsa. Rerum, ea ullam officiis incidunt alias laborum
+            fugiat
+            necessitatibus repellat perferendis animi quisquam tempora cum. Adipisci, neque. Numquam, recusandae
+            possimus.
+            Possimus asperiores odit impedit sunt veniam explicabo quia rerum! Iusto nihil reprehenderit saepe quasi aut
+            ea
+            beatae nulla iste doloremque corrupti. Veritatis, ex. Id exercitationem eligendi labore repellendus sit
+            ipsam
+            praesentium, qui placeat totam impedit autem. Asperiores at aperiam reprehenderit ipsa iusto iure quasi nemo
+            veniam beatae necessitatibus sequi, nam in doloremque, explicabo illum voluptate ea, voluptatem perferendis
+            tempore. Officiis nam adipisci libero animi blanditiis officia eos sit soluta debitis quasi, molestiae
+            cumque,
+            sint nesciunt voluptatem quisquam voluptate maxime, itaque facilis unde vel. Illum rerum dolorum quibusdam
+            voluptates odio pariatur repellat nisi aperiam atque, qui ab dolores officiis ratione unde error at deserunt
+            debitis maxime delectus!</div>
+
+
+        <nav class="navbar">
+            <ul>
+                <li><a href="https://www.w3schools.com/html/default.asp" target="_blank">HTML</a></li>
+                <li><a href="https://www.w3schools.com/css/default.asp" target="_blank">CSS</a></li>
+                <li><a href="https://www.w3schools.com/js/default.asp" target="_blank" rel="noopener noreferrer">JS</a>
+                </li>
+                <li><a href="https://www.w3schools.com/java/default.asp" target="_blank"
+                        rel="noopener noreferrer">Java</a>
+                </li>
+                <li><a href="https://www.w3schools.com/mysql/default.asp" target="_blank"
+                        rel="noopener noreferrer">MySQL</a></li>
+            </ul>
+        </nav>
+
+        <section class="sidebar">
+            <ul>
+                <li><a href="https://www.w3schools.com/html/default.asp" target="_blank">HTML</a></li>
+                <li><a href="https://www.w3schools.com/css/default.asp" target="_blank">CSS</a></li>
+                <li><a href="https://www.w3schools.com/js/default.asp" target="_blank" rel="noopener noreferrer">JS</a>
+                </li>
+                <li><a href="https://www.w3schools.com/java/default.asp" target="_blank"
+                        rel="noopener noreferrer">Java</a>
+                </li>
+                <li><a href="https://www.w3schools.com/mysql/default.asp" target="_blank"
+                        rel="noopener noreferrer">MySQL</a></li>
+            </ul>
+        </section>
+
+        <div class="main">
+
+            <div class="container1">
+                <h1 id="first">This is heading 1</h1>
+                <h1 id="second">This is heading 2</h1>
+                <h1 id="thrid">This is heading 3</h1>
+                <h1 id="fourth">This is heading 4</h1>
+                <h1 id="fifth">This is heading 5</h1>
+            </div>
+
+            <div class="info">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste ut, iusto illo quibusdam, distinctio
+                    impedit ex quibusdam totam ea eligendi, repellat suscipit? Consequuntur, quia, beatae labore
+                    repellendus
+                    aperiam animi excepturi laboriosam quas sint corrupti ex! Eos, dolore! Consectetur enim saepe
+                    veritatis
+                    aperiam cum vitae reprehenderit fugit ratione tempore vero. Iste explicabo ducimus a exercitationem
+                    fugiat. A, voluptate? Hic eum commodi ut itaque sint alias debitis voluptatibus quos vitae fugiat!
+                    Sint
+                    totam consequatur quisquam repudiandae ad beatae dolor in iusto laborum tenetur fugiat temporibus
+                    rerum
+                    aliquam consequuntur expedita eos explicabo excepturi necessitatibus, deleniti provident, dicta
+                    libero
+                    iure commodi aliquid. Fuga excepturi veniam quo consequuntur nisi quasi.</p>
+            </div>
+
+            <div>
+                <img src="../HTML/prime.webp" alt="" height="100px" width="200px">
+                <img src="../HTML/prime.webp" alt="" height="100px" width="200px">
+            </div>
+
+        </div>
+
+
+        <div class="container">
+            <div class="box2"></div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="spin">
+            <div class="box1">
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS</title>
+    <script>
+        // {
+        //     var a = 10;
+        //     console.log(a);
+        //     a = "string";
+        // }
+        // console.log(a);
+        // document.writeln(a, "<br>" + a);
+        // alert("Hello");
+        // let bool = confirm("Do you want to continue?");
+        // console.log(bool);
+
+        // let age = prompt("Enter your Age:", 22);
+        // console.log(age);
+        // age = Number.parseInt(age);
+        // if (age > 20) {
+        //     window.alert("Greater than 20");
+        // }
+        // else {
+        //     alert("Less than 20");
+        //     window.close();
+        // }
+
+        // for (let i = 1; i <= 5; i++) {
+        //     console.log(i);
+        // }
+
+        // function display() {
+        //     var n = parseInt(document.getElementById("num").value);
+        //     var show = document.getElementById("show");
+        //     show.innerHTML = "<label>Original</lable><input type='number' value=" + n + "><br><label>Square</lable><input type='number' value=" + n * n + "><br><label>Cube</lable> <input type='number' value=" + n * n * n + ">";;
+        // }
+    </script>
+    <style>
+        .hide {
+            display: none;
+        }
+
+        .container {
+            background-color: black;
+            color: white;
+            margin: auto;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 200px;
+            width: 500px;
+            border-radius: 20px;
+            border: 10px double white;
+            font-size: 50px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        .form,
+        #f1 {
+            display: flex;
+            flex-direction: column;
+            margin: auto;
+            border: 2px solid black;
+            padding: 30px;
+            background-color: aqua;
+        }
+
+        label,
+        input {
+            display: block;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+
+        #err {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="hide">
+
+        <h4>Square and Cube</h4>
+        <input type="number" id="num" placeholder="Enter number">
+        <input type="button" value="Click" onclick="display()">
+        <div id="show"></div>
+        <div class="container">
+            <span id="date_time"></span>
+        </div>
+
+    </div>
+    <div class="form">
+        <form action="" id="f1">
+            <fieldset>
+                <legend>User Login</legend>
+                <label for="name">Name</label><span id="err"></span>
+                <input type="text" id="name" name="name" required />
+                <label for="mobile">Mobile</label><span id="err"></span>
+                <input type="number" name="mobile" id="mobile" max="9999999999" />
+                <label for="email">Email</label><span id="err"></span>
+                <input type="email" name="email" id="email" required />
+                <label for="password">Password</label><span id="err"></span>
+                <input type="password" id="password" name="password" required />
+                <input type="button" value="Submit" form="f1" onclick="validate()">
+                <input type="reset" value="Clear">
+            </fieldset>
+        </form>
+
+    </div>
+
+    <script>
+        function onload() {
+            var today = new Date();
+            var hour = today.getHours();
+            var min = today.getMinutes();
+            var sec = today.getSeconds();
+            var ms = today.getMilliseconds();
+            hour = hour % 12;
+            hour = (hour < 10) ? "0" + hour : hour;
+            var time = hour + ":" + min + ":" + sec + ":" + ms;
+            document.getElementById("date_time").textContent = time;
+        }
+        // setInterval(onload, 100);
+
+        function validate() {
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let password = document.getElementById("password").value;
+            const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            const isValidEmail = emailRegex.test(email);
+            let err = document.getElementById("err");
+            if (!isValidEmail)
+                err.innerHTML = "Enter valid email";
+            if (!isNaN(name))
+                err.innerHTML = "Enter valid name";
+
+
+        }
+
+
+    </script>
+</body>
+
+</html>
