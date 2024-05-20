@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMDb Clone</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <div class="header">
+            <div class="logo"><img src="images/prime.webp" alt="logo" width="200px" height="100px"></div>
+            <div id="title" onclick="changePage('Hindi')">
+                Hindi
+            </div>
+            <div id="title" onclick="changePage('Marathi')">
+                Marathi
+            </div>
+            <div id="title" onclick="changePage('English')">
+                English
+            </div>
+            <div id="title" onclick="changePage('Others')">
+                Others
+            </div>
+        </div>
+
+    </header>
+
+    <div class="sidebar">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </div>
+
+
+    <div class="container" id="movie-list">
+        <h1>Movie Information System</h1>
+        <iframe id="IFrame" src="hindi/info1.html" frameborder="1">
+        </iframe>
+    </div>
+
+    <div class="upcomming">
+        <h1 id="colorText">Upcoming Movies</h1>
+        <iframe class="iframe2" src="other/info1.html" frameborder="1">
+        </iframe>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+
+</html>
