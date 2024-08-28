@@ -12,6 +12,13 @@
 //primitive - boolean,undefined,string,null,number
 //user defined - function,object
 
+// Comments Types used in Industry
+/*  * Document Comments
+    ! Warning Comments
+    ? Question Comments
+    TODO: To Do Comments
+*/
+
 //variables - let,var,const
 //var variables are initalized with undefined whereas let and const variables are not initialized
 //var is globally scoped while let and const are block scoped
@@ -39,73 +46,99 @@
 
 //const must be initialized during declaration
 //const can neither be updated nor redeclared
-const Pi = 3.14; //Pi value can't be changed 
+const Pi = 3.14; //Pi value can't be changed
 
 // //Lexical Scope - properties of parent to child
-// function grandFather(){
-//     var name = "Shree";
-//     function father(){
-//         console.log(name);
-//         function son(){
-//             console.log(name);
-//         }
-//         son();
+// function grandFather() {
+//   var name = "Shree";
+//   function father() {
+//     console.log(name);
+//     function son() {
+//       console.log(name);
 //     }
-//     father();
+//     son();
+//   }
+//   father();
 // }
 // grandFather();
 
-// // Recountructing 
+// // Recountructing
 // let [first,second,third,...others] = [1,2,3,4,5,6,7];
 // console.log(first,second,third,others);
 
-//Naming Conventions : (start with $ , _  or letter)
+//Naming Conventions : (start with $ , _  or letter but not with number)
 //camelcase - firstName, pascalcase - FirstName, snakecase - first_name
 
-// var num=10000000000n; //bigint
+// var num = 10000000000n; //bigint
 // var num; //undefined
 // var num = null; //object
 // var num = 10; //number
 // var num = "Hello"; //string
-// typeof(num) //return datatype
-
+// var type = typeof num; //return datatype
+// console.log(type);
 
 //taking input from user
-// var i = prompt("Enter a number:")
+// var i = prompt("Enter a number:");
 // console.log(i);
 
 //operators : +,-,%,*,/,**,++,--
 //assignment operators : +=,-+,%=,/=,*=,**=
 //comparison operators :  <,>,<=,>=
-//equals(==), not equals(!=), strict equal(===), strict not equal(!==) 
+//equals(==), not equals(!=), strict equal(===), strict not equal(!==)
 //logical operators : &&, ||, !
 //ternary operator( expression ? True : False )
 // var x = 11;
-// console.log("Value of X is", (x==10 ? "Ten" : "Not Ten") );  
+// console.log("Value of X is", (x==10 ? "Ten" : "Not Ten") );
 
 //Primitive data types - NNSSBBU
 //null number symbol string boolean bigint undefined
 // let a = null;
 // let b = 123;
-// let c = Symbol("I an doing JavaScript");
+// let c = Symbol("I am doing JavaScript");
 // let s = "Study Hard";
 // let e = true;
 // let d = BigInt(123456789);
 // let g = undefined; // by default if not initialized
 // console.log(a,b,c,s,e,d,g);
 
-// Object - key value pairs having primitive data types and functions
+// // Object - key value pairs having primitive data types and functions
+// // Creating object using object literal
 // const item = {
-//     "Name": "JavaScript",
-//     "Time": 24,
-//     "Value": 1.5,
-//     hello(){console.log("Hello function in object")}
-// }
+//   Name: "JavaScript",
+//   Time: 24,
+//   Value: 1.5,
+//   hello() {
+//     console.log("Hello function in object");
+//   },
+// };
 // console.log(item.Name);
 // console.log(item["Time"]);
 // let v = "Value";
 // console.log(item[v]);
 // item.hello();
+
+// // Create object using new keyword
+// let obj = new Object();
+// obj.Name = "JavaScript";
+// obj.Time = 24;
+// obj.Value = 1.5;
+// obj.hello = function () {
+//   console.log("Hello function in object");
+// };
+// console.log(obj);
+
+// // Create object using constructor function
+// let constr = function (name, time, value) {
+//   this.Name = name;
+//   this.Time = time;
+//   this.Value = value;
+//   this.hello = function () {
+//     console.log("Hello function in object");
+//   };
+// };
+
+// obj = new constr("JavaScript", 24, 1.5);
+// console.log(obj);
 
 // // Primitive DataType
 // let num = 10;
@@ -123,8 +156,19 @@ const Pi = 3.14; //Pi value can't be changed
 // console.log(obj);
 // console.log(obj1);
 
-// const obj2 = {...item}; // clone of object (... spread opeartor)
+// // Spread Operator (...)
+// var obj2 = item; // will have same reference to single object
 // console.log(obj2);
+// var obj2 = { ...item }; // clone of object (... spread opeartor) to avoid reference
+// console.log(obj2);
+
+// function sum(...arg) {
+//   return arg.map((ele) => {
+//     return ele + ele;
+//   });
+// }
+
+// console.log(sum(1, 2, 3, 4, 5));
 
 // const obj3 = Object.assign({},item); // clone of object
 // console.log(obj3);
@@ -133,7 +177,7 @@ const Pi = 3.14; //Pi value can't be changed
 //     console.log(key,item[key]);
 // }
 
-// copy one object into another 
+// copy one object into another
 // const obj4 ={};
 // for(let key of Object.keys(item)){
 //     console.log(key,item[key]);
@@ -141,11 +185,10 @@ const Pi = 3.14; //Pi value can't be changed
 // }
 // console.log(obj4);
 
-
 //create a variable of type string and try to add a number to it
 // let str = "Add ";
 // let a = 1;
-// str = str + a; 
+// str = str + a;
 // console.log(str);
 
 // //change value of const object
@@ -190,12 +233,12 @@ const Pi = 3.14; //Pi value can't be changed
 
 // let i =items("JavaScript",24,1.5);
 // console.log(i);
-// console.log(i.constructor);//defines that object is made of which constructor 
+// console.log(i.constructor);//defines that object is made of which constructor
 
 // //Constructor Function
 // function Course(title,duration){
 //     this.title=title,
-//     this.duration=duration, 
+//     this.duration=duration,
 //     this.enroll = function(){
 //         console.log("You are sucessfully enrolled");
 //     }
@@ -204,8 +247,7 @@ const Pi = 3.14; //Pi value can't be changed
 // const c = new Course('JavaScript',4);
 // console.log(c);
 // c.enroll();
-// console.log(c.constructor);//defines that object is made of which constructor 
-
+// console.log(c.constructor);//defines that object is made of which constructor
 
 // function Prod(item,price,discount,code){
 //     this.item=item;
@@ -224,7 +266,7 @@ const Pi = 3.14; //Pi value can't be changed
 // console.log(item);
 
 // delete item.Name; //Delete variable in object
-// console.log(item); 
+// console.log(item);
 
 //let str = promt("Message"); - taking input from user as string
 //alert("Message"); - display output to user
@@ -316,10 +358,10 @@ For example, a function can be called when an event occurs, like when the user c
 
 //Strings (object) immutable
 //can access from index but can not change value for example
-// let fr = "Friend";
-// fr[0]="d";
-// console.log(fr[0]);
-// console.log(fr);
+let fr = "Friend";
+fr[0] = "d";
+console.log(fr[0]);
+console.log(fr);
 // let str = "String in JS";
 // let str1 = 'This is String\'s';
 // let str2 =  `Hello ${str}`; //template literal
@@ -327,7 +369,6 @@ For example, a function can be called when an event occurs, like when the user c
 //Escaspe Sequence Characters \',\",\n,\t,\r(carriage return)
 // var f = 'Fruit\'s';
 // console.log(f);
-
 
 //String built-in functions doesn't change original string it just return it
 // var l = str2.length;
@@ -360,7 +401,6 @@ For example, a function can be called when an event occurs, like when the user c
 
 // console.log(a.find( ele => ele.value === 'twenty'));//arrow function
 
-
 //converting string first letter to capital and rest small
 // let str = "pUnE";
 // str=str.toLowerCase();
@@ -386,15 +426,17 @@ For example, a function can be called when an event occurs, like when the user c
 // console.log(Boolean(0));
 // console.log(Boolean(n));
 
-
 //Arrays (object) - variable which can store more than one value of any data type (mutable)
+// Ways to construct array
+// Using array literal
 // const arr = [10,null,11.5,"Hello",undefined,a=()=>{console.log("Function")}]
 //if we try to access out of bound array elements we get undefined
 // console.log(arr[10]);
 // arr[0]=20;
 // console.log(arr);
 
-// const num = new Array(1,2,3,4,5);//array unsing Object(Constructor)
+// Using Array (Constructor) with new keyword
+// const num = new Array(1,2,3,4,5);
 // console.log(num);
 
 // //Methods of array
@@ -413,7 +455,7 @@ For example, a function can be called when an event occurs, like when the user c
 // console.log("Unshifted with new lenght",r,arr);
 // delete arr[2];// delete element from original array without shifting element (space remain unallocated but not decrease)
 // console.log(arr);
-// let arr1 = [3,2,6,4,5,1];
+// let arr1 = [3, 2, 6, 4, 5, 1];
 // let arr2 = arr1.concat(arr,"new");//return conatenated elements
 // console.log(arr2)
 // arr2.sort(); // sort original array according to string
@@ -433,17 +475,21 @@ For example, a function can be called when an event occurs, like when the user c
 // console.log(arr1);
 
 // //splice(position,noOfElementsRemove,elements...) - used to add new items to an original array
-// arr1.splice(2,0,1,1,"11");// returns deleted array elements
-// console.log(arr1);
-// //slice() - return slices out a piece from an array
-// console.log(arr1.slice(3,5));
+// let del = arr1.splice(2, 2, 1, 1, "11"); // returns deleted array elements
+// console.log("Deleted element:" + del);
+// console.log("Updated array: " + arr1);
+//slice() - return slices out a piece from an array
+// console.log(arr1.slice(3, 5));
 
 //Array Looping function - forEach, from, map
 //forEach(value,index,array) - calls an function
-let a = [1, 4, 6, 3, 2];
+// let arr = [1, 4, "hello", 3, 2];
 
-// a.forEach((i,n,arr)=>{
-//     console.log(i,n,arr);
+// arr.forEach((element, index, array) => {
+//   console.log(element, index, array);
+//   if(element==="hello"){
+//     // break; // not allowed (Jump target cannot cross function boundary)
+//   }
 // });
 
 // //from - used to create an array from any String object (DOM - HTML collection)
@@ -461,11 +507,11 @@ let a = [1, 4, 6, 3, 2];
 // console.log("New array",c);
 
 // //filter() - filters an array with values that passes a test creating a new array
-// let even = a.filter((no,item,arr)=>{
-//     // if(item%2===0)
-//     //     return item;
-//     console.log(no,item,arr);
-//     return no+item>=3;
+// let even = arr.filter((no,index,arr)=>{
+//     if(no%2===0)
+//         return no;
+//     // console.log(no,index,arr);
+//     // return no+index>=3;
 // });
 // console.log("New array",even);
 
@@ -478,11 +524,21 @@ let a = [1, 4, 6, 3, 2];
 // console.log(a.some( no => no>5));
 
 // // reduce() - reduce an array to a single value
-// let d = a.reduce((v1,v2,i,arr)=>{
-//     console.log(v1,v2,i,arr);
-//     return v1 + v2;
-// });
-// console.log(d);
+// syntax: arr.reduce(callback(accumulator, currentValue, currentIndex, array), initialValue)
+// Parameters:
+// callback: The main is the callback function that executes for each element, excluding the first, if no initialValue is specified.
+// The callback function undertakes the following four arguments:
+// accumulator: It accumulates the return values of the callback function, returned in the last calling of the function.
+// currentValue: It is the value of the current element, which is being processing.
+// currentIndex: It is an optional argument that holds the index value of the current element which is being processed. If we provide the initial value, indexing will begin from 0. Else from 1.
+// array: It is also optional, which carries the elements on which the reduce() will work.
+// initialValue: It is the first argument value used in the first invocation of the callback function.
+// let arr = [1, 2, 3, 4, 5];
+// let d = arr.reduce((accu, current, i, arr) => {
+//   console.log(accu, current, i, arr);
+//   return accu + current;
+// }, 2);
+// console.log("Addition:" + d);
 
 //genrate random number
 // let n = Math.floor(Math.random()*101);
@@ -506,6 +562,24 @@ let a = [1, 4, 6, 3, 2];
 // console.info("Main message using info");
 // console.log("Main message using log");
 // console.timeEnd("T");//ending time process
+
+// De-Sctructuring - used to unpack values from arrays or properties from objects into distinct variables
+// let rating = 4.1;
+// let product = {
+//   brand: "Cello",
+//   itemName: "Ball Pen",
+//   price: 200,
+//   // rating: 3.4, (is same as)
+//   // rating: rating (is same as)
+//   rating,
+//   discription: () => {
+//     return "Cello Black ball pen with 0.7mm thickness";
+//   },
+// };
+// console.log(product);
+// // let price = product.price; (is same as)
+// let { price } = product;
+// console.log(price);
 
 //Interaction - alert, comfirm, prompt
 // alert("This is an alert message");
@@ -564,7 +638,6 @@ let a = [1, 4, 6, 3, 2];
 //Table DOM
 // const tableTag = document.body.children[3];
 // console.log(tableTag.tBodies[0].rows[0].cells[0].textContent);
-
 
 // //Searching or Selecting DOM
 // let span = document.getElementById("span");
@@ -626,7 +699,6 @@ let a = [1, 4, 6, 3, 2];
 // btn.addEventListener('click',call)  \\used to assign multiple handlers to an event
 
 // btn.removeEventListener('click',call);
-
 
 // console.dir(n); //Shows element DOM tree
 
@@ -715,7 +787,6 @@ let a = [1, 4, 6, 3, 2];
 // promise2.catch((reason) => {
 //     console.log(reason + " Something went wrong in promise2");
 // });
-
 
 // // Classes - template for creating objects (special functions)
 // class Product{
@@ -809,4 +880,3 @@ let a = [1, 4, 6, 3, 2];
 
 // console.log(sub.getName());
 // console.log(stu.getName());
-
